@@ -9,11 +9,6 @@ docker run -idt --name interim schoolofdevops/voteapp-mvn:v0.1.0  sh
 
 ```
 
-Connect to the container using docker exec and create a directory /code
-```
-docker container exec interim mkdir /code
-```
-
 ## Copy over the Source Code
 
 
@@ -57,6 +52,8 @@ Commit  container to an image
 
 Test by launching container 
 
+```
   docker run -idt  --name test-worker  <docker hub user id >/vote-worker:v0.1.0 sh -c "java -jar target/worker-jar-with-dependencies.jar"
+```
 
 
