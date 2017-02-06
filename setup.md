@@ -1,5 +1,9 @@
 ## Clone Repository for Java Worker Process
 
+```
+git clone https://github.com/schoolofdevops/voting-app-worker.git
+```
+
 ## Launch a intermediate container to install worker app 
 
 Create a Container with  **schoolofdevops/voteapp-mvn:v0.1.0** image 
@@ -13,6 +17,7 @@ docker run -idt --name interim schoolofdevops/voteapp-mvn:v0.1.0  sh
 
 
 ```
+cd voting-app-worker 
 docker container cp .  interim:/code
 
 ```
