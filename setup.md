@@ -58,7 +58,7 @@ Commit  container to an image
 Test by launching container 
 
 ```
-  docker run -idt  --name test-worker  <docker hub user id >/vote-worker:v0.1.0 sh -c "java -jar target/worker-jar-with-dependencies.jar"
+  docker run -idt  --name test-worker  <docker hub user id >/vote-worker:v0.1.0 java -jar target/worker-jar-with-dependencies.jar
 ```
 
 
