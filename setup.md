@@ -61,4 +61,33 @@ Test by launching container
   docker run -idt  --name test-worker  <docker hub user id >/vote-worker:v0.1.0 java -jar target/worker-jar-with-dependencies.jar
 ```
 
+### Push Image to registry 
+
+Before you push the image, you need to be logged in to the registry, with the docker hub id created earlier. Login using the following command, 
+
+```
+docker login 
+```
+
+To push the image, first list it, 
+
+```
+docker image ls
+```
+
+[Sample Output]
+
+```
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+initcron/vote-worker         v0.2.0              90cbeb6539df        18 minutes ago      194MB
+initcron/vote-worker         v0.1.0              c0199f782489        34 minutes ago      189MB
+
+```
+
+To push the image, 
+
+
+```
+docker push initcron/vote-worker:v0.1.0
+```
 
