@@ -22,14 +22,12 @@ docker container cp .  interim:/code
 
 ```
 
-Connect to container again and compile and package the code 
+Connect to container to compile and package the code 
 
 
 ```
 docker exec -it interim sh 
 
-mvn dependency:resolve
-mvn verify
 mvn package
 
 ```
@@ -44,18 +42,16 @@ ls target/
 
 Commit  container to an image
  
-  * Exit from the container shell and stop container
+  * Exit from the container shell 
   * Note container ID 
 
 ```
-   
-  docker container stop interim 
-  
+     
   docker container commit interim  <docker_hub_id>/vote-worker:v0.1.0
 
 ```
 
-Test by launching container 
+Test before pushing  by launching container with the packaged app
 
 ```
   docker run -idt  --name test-worker  <docker hub user id >/vote-worker:v0.1.0 java -jar target/worker-jar-with-dependencies.jar
