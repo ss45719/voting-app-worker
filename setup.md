@@ -47,14 +47,14 @@ Commit  container to an image
 
 ```
      
-  docker container commit interim  <docker_hub_id>/vote-worker:v0.1.0
+  docker container commit interim  <docker_hub_id>/worker:v1
 
 ```
 
 Test before pushing  by launching container with the packaged app
 
 ```
-  docker run -idt  --name test-worker  <docker hub user id >/vote-worker:v0.1.0 java -jar target/worker-jar-with-dependencies.jar
+  docker run -idt  --name test-worker  <docker hub user id >/worker:v1 java -jar target/worker-jar-with-dependencies.jar
 ```
 
 ### Push Image to registry 
@@ -84,6 +84,6 @@ To push the image,
 
 
 ```
-docker push initcron/vote-worker:v0.1.0
+docker push <docker_hub_id>/vote-worker:v0.1.0
 ```
 
