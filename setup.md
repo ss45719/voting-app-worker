@@ -37,6 +37,7 @@ mvn package
 ```
 ls target/
 
+java -jar target/worker-jar-with-dependencies.jar
 ```
 
 
@@ -45,17 +46,14 @@ Commit  container to an image
   * Exit from the container shell 
   * Note container ID 
 
+
+
 ```
      
   docker container commit interim  <docker_hub_id>/worker:v1
 
 ```
 
-Test before pushing  by launching container with the packaged app
-
-```
-  docker run -idt  --name test-worker  <docker hub user id >/worker:v1 java -jar target/worker-jar-with-dependencies.jar
-```
 
 ### Push Image to registry 
 
@@ -75,8 +73,7 @@ docker image ls
 
 ```
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-initcron/vote-worker         v0.2.0              90cbeb6539df        18 minutes ago      194MB
-initcron/vote-worker         v0.1.0              c0199f782489        34 minutes ago      189MB
+initcron/worker               v1              90cbeb6539df        18 minutes ago      194MB
 
 ```
 
