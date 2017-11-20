@@ -73,7 +73,7 @@ docker image ls
 
 ```
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-initcron/worker               v1              90cbeb6539df        18 minutes ago      194MB
+xyz/worker               v1              90cbeb6539df        18 minutes ago      194MB
 
 ```
 
@@ -81,6 +81,6 @@ To push the image,
 
 
 ```
-docker push <docker_hub_id>/vote-worker:v0.1.0
+docker push <docker_hub_id>/worker:v1
 ```
 
