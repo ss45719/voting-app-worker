@@ -6,10 +6,10 @@ git clone https://github.com/schoolofdevops/voting-app-worker.git
 
 ## Launch a intermediate container to install worker app 
 
-Create a Container with  **schoolofdevops/voteapp-mvn:v0.1.0** image 
+Create a Container with  **maven** image 
 
 ```
-docker run -idt --name interim schoolofdevops/voteapp-mvn:v0.1.0  sh
+docker run -idt --name interim  maven  bash
 
 ```
 
@@ -26,7 +26,9 @@ Connect to container to compile and package the code
 
 
 ```
-docker exec -it interim sh 
+docker exec -it interim bash 
+
+cd /code
 
 mvn package
 
